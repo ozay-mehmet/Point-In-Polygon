@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Point-in-Polygon (Ray Casting) Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Point-in-Polygon <span>Visualizer</span></h1>
+            <p>Paralel Ray Casting Algoritması Etkileşimli Gösterimi</p>
+        </header>
+
+        <main>
+            <div class="controls">
+                <div class="control-group">
+                    <label>Poligon Türü</label>
+                    <select id="polygon-type">
+                        <option value="convex">Convex (Dışbükey)</option>
+                        <option value="concave">Concave (İçbükey Yıldız)</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <button id="btn-clear" class="btn btn-secondary">Noktaları Temizle</button>
+                    <button id="btn-random" class="btn btn-primary">Rastgele 100 Nokta Ekle</button>
+                </div>
+                
+                <div class="stats">
+                    <div class="stat-box">
+                        <span class="stat-label">Toplam Nokta</span>
+                        <span class="stat-value" id="stat-total">0</span>
+                    </div>
+                    <div class="stat-box success">
+                        <span class="stat-label">İçeride</span>
+                        <span class="stat-value" id="stat-inside">0</span>
+                    </div>
+                    <div class="stat-box danger">
+                        <span class="stat-label">Dışarıda</span>
+                        <span class="stat-value" id="stat-outside">0</span>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Ray Casting Nasıl Çalışır?</h3>
+                    <p>Noktadan sağa (pozitif x) doğru sanal bir ışın gönderilir.</p>
+                    <ul>
+                        <li><span class="dot-inside"></span> Işın poligonu <strong>TEK</strong> sayıda keserse nokta içeridedir.</li>
+                        <li><span class="dot-outside"></span> Işın poligonu <strong>ÇİFT</strong> sayıda keserse nokta dışarıdadır.</li>
+                    </ul>
+                    <p><em>İpucu: Tuvale tıklayarak kendiniz nokta ekleyebilirsiniz!</em></p>
+                </div>
+            </div>
+
+            <div class="canvas-container">
+                <canvas id="pip-canvas" width="800" height="600"></canvas>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
