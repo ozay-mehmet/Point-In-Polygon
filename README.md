@@ -286,23 +286,60 @@ Elde edilen değer ne kadar yüksekse paralel uygulamanın başarısı o kadar y
 
 # ▶️ Projenin Çalıştırılması
 
-## Derleme
+Proje iki ana bileşenden oluşmaktadır: Java tabanlı algoritma ve analiz uygulaması (`PointInPolygon_Kaynak`) ile modern web tabanlı kullanıcı arayüzü (`web-ui`).
+
+## 1. Java Uygulamasının (Main ve Benchmark) Çalıştırılması
+
+Java kaynak kodları `PointInPolygon_Kaynak` dizini altındadır.
+
+### Derleme
+
+Öncelikle kaynak kodların bulunduğu dizine gidip kodları derleyin:
 
 ```bash
+cd PointInPolygon_Kaynak
 javac *.java
 ```
 
-## Ana Programı Çalıştırma
+### Ana Programı Çalıştırma (Main)
+
+Poligon oluşturma ve paralel vs ardışık çözüm karşılaştırmasını görmek için ana programı çalıştırabilirsiniz:
 
 ```bash
-java Main.java
+java Main
 ```
+*(Not: Java 11 ve üzeri bir sürüm kullanmıyorsanız önce derlemelisiniz)*
 
-## Benchmark Testlerini Çalıştırma
+### Benchmark Testlerini Çalıştırma
+
+Farklı nokta ve thread sayıları ile geniş çaplı performans testlerini (Benchmark) başlatmak için:
 
 ```bash
-java BenchmarkRunner.java
+java BenchmarkRunner
 ```
+
+## 2. Web Arayüzünün (Web-UI) Çalıştırılması
+
+Web arayüzü, poligon ve noktaları interaktif olarak oluşturmanıza ve test etmenize olanak tanır. Herhangi bir derlemeye ihtiyaç duymaz. `web-ui` klasörü altında bulunur.
+
+### Seçenek A: VS Code "Live Server" Eklentisi ile (Önerilen)
+1. `web-ui` klasöründeki `index.html` dosyasını VS Code ile açın.
+2. Sağ tıklayıp **"Open with Live Server"** seçeneğini seçerek tarayıcıda görüntüleyin.
+
+### Seçenek B: Python ile
+Eğer bilgisayarınızda Python yüklüyse, terminal üzerinden sunucu başlatabilirsiniz:
+```bash
+cd web-ui
+python -m http.server 8000
+```
+Ardından tarayıcınızdan `http://localhost:8000` adresine gidebilirsiniz.
+
+### Seçenek C: Node.js (npx) ile
+```bash
+cd web-ui
+npx serve
+```
+Terminalde belirtilen adrese (genellikle `http://localhost:3000`) tıklayarak arayüze erişebilirsiniz.
 
 ---
 
