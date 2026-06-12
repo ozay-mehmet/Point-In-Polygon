@@ -13,16 +13,16 @@ Projenin temel amacı, büyük miktarda nokta verisi üzerinde gerçekleştirile
 📹 Proje videosuna aşağıdaki bağlantıdan ulaşabilirsiniz:
 
 **Video Linki:**
-[VIDEO_LINKI_BURAYA]
+[https://youtu.be/VHv8HkVzL3w]
 
 ---
 
 ## 📄 Teknik Rapor
 
-📑 Proje teknik raporuna aşağıdaki bağlantıdan ulaşabilirsiniz:
+📑 Proje teknik raporuna aşağıdaki bağlantıdan ulaşıp indirebilirsiniz:
 
 **Teknik Rapor:**
-[RAPOR_LINKI_BURAYA]
+[https://github.com/ozay-mehmet/Point-In-Polygon/blob/main/Mehmet%20%C3%96zay-22360859062-Paralel-Programlama.pdf]
 
 ---
 
